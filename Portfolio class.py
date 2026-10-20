@@ -21,7 +21,7 @@ class Portfolio:
         self.allocated_stocks = allocated_stocks
 
     # Calculate the current portfolio value.
-    def current_value(self):
+    def get_total_value(self):
         total_value = 0
 
         for stock in self.stocks:
@@ -33,11 +33,11 @@ class Portfolio:
 
     # Calculate the target values based on portfolio current value
     def target_values(self):
-        current_value = self.current_value()
+        total_value = self.get_total_value()
         target_values = {}
 
         for symbol, target_allocation in self.allocated_stocks.items():
-            target_value = current_value * target_allocation
+            target_value = total_value * target_allocation
             target_values[symbol] = target_value
 
         return target_values
@@ -49,9 +49,9 @@ class Portfolio:
         # Stocks not currently held are represented with quantity = 0.
         # Allocations are valid and sum to 100%.
         for stock in self.stocks: 
-            stock_current_value = stock.quantity * stock.price
+            stock_total_value = stock.quantity * stock.price
             target_value = target_values.get(stock.symbol, 0)
-            difference = target_value - stock_current_value # Compare current allocation against target allocation.
+            difference = target_value - stock_total_value # Compare current allocation against target allocation.
             adjustment[stock.symbol] = difference/stock.price
         
         return adjustment # Return the required buy/sell operations.
