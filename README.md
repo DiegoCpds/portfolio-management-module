@@ -10,3 +10,6 @@ La clase Portfolio posee 3 métodos:
 ## Supuestos
 - Se asume que todos los stocks definidos en allocated_stocks existen en self.stocks. Si no se posee alguno, se representa con stock.quantity = 0.
 - Las asignaciones en allocated_stocks son válidas y suman el 100% de la cartera.
+
+# Chat LLM
+https://chatgpt.com/share/6ad7b111-3bdc-83e8-bbf3-3f7d75ffd666
