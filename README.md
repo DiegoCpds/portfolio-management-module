@@ -1,2 +1,3 @@
 # portfolio-management-module
-Repositorio para subir resultados de tarea para postular a Fintual
+Repositorio para subir postulacion a Software Engineer en Fintual
+
